@@ -1,3 +1,15 @@
+let arr = [];
+for (let i = 0; i < 5; i++) {
+  let num = prompt("Enter a number:");
+  arr.push(num%10); 
+  
+}
+console.log(arr);
+
+
+
+
+
 //let n = Number(prompt("Enter a number:"));
 //let last = n % 10;
 //while (n >= 10)
@@ -18,12 +30,12 @@
 
 
 
-let arr = [10, 20, 30, 40, 50];
+/*let arr = [10, 20, 30, 40, 50];
 let first = arr[0];
 let last = arr[arr.length - 1];
 
 
 let sum = first + last;
-console.log(sum); 
+console.log(sum); */
 
 
