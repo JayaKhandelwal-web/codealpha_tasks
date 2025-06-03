@@ -1,8 +1,8 @@
 let head=document.getElementById('head1')
 console.log(head);
-head.textContent="welcome"
+head.textContent="hello"
 head.style.backgroundColor="yellow"
-head.style.padding="24px"
+head.style.padding="20px"
 
 
 
@@ -13,6 +13,6 @@ head2.innerHTML="<i> tea break </i>"
 
 let list=document.getElementsByTagName('li')
 console.log(list);
-list[1].textContent="about"
+list[4].textContent="about"
 
 
