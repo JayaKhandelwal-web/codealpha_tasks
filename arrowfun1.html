@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  num1: <input type="text" id="num1"> <br>
+  num2: <input type="text" id="num2"> 
+  
+
+  <button onclick="myfun()">palindrome</button>
+  <button onclick="myfun()">armstrong</button>
+  <button onclick="myfun()">prime number</button>
+
+answer:<p id="res"></p>
+answer:<q id="result"></q>
+answer:<r id="re"></r>
+
+
+     <script>
+        p=document.getElementById("res")
+          q=document.getElementById("result")
+            r=document.getElementById("re")
+        const myfun=()=>{
+            
+            x=parseInt(document.getElementById("num1").value);
+            y=parseInt(document.getElementById("num2").value);
+            c=x+y;
+            console.log(c)
+            p.innerText=c
+        }
+        
+      
+        
+    </script>
+</body>
+</html>
