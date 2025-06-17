@@ -22,16 +22,16 @@
        
         let user_input_email=document.getElementById('email').value;
          let user_input_pwd=document.getElementById('pwd').value;
-        let found=false
-       /* user_email.map((e)=>{ //e is parameter
+        //let found=false
+       user_email.map((e)=>{ //e is parameter
             if(e===user_input_email){
                 alert('value match');
-                found=true
+                
             }
             if(!found){
                 alert('not match');
             }
-        });*/
+        });
 console.log(user_input_email);
 let ind=user_email.findIndex(e=>e===user_input_email)
 console.log(user_pwd[ind]);

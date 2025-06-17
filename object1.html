@@ -6,16 +6,15 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>object and array method</h1>
+    <div id="div">
+
+    </div>
     <script>
-  let arr1=[10,10,10,10] 
-    let sum=0;
-    arr1.map((e)=>{
-        sum=sum+e
-    }
-    )
-    console.log(sum);
-    
+       let arr=["jaya","jay","muskan"];
+       let x=document.getElementById("div")
+       let y=arr.find((e)=>{return e==="jay"});
+       x.innerHTML=y;
     </script>
-  
 </body>
 </html>

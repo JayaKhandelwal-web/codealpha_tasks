@@ -8,35 +8,37 @@
 </head>
 <body>
     
-    <h1>hello adsfs</h1>
-    <input type="text" placeholder="email" id="email"> <br>
-    <input type="text" placeholder="password" id="password"> <br>
+    <h1>JAVASCRIPT MAP FUNCTION</h1>
+    <input type="text" placeholder="email" id="email"><br>
+    <input type="text" placeholder="password" id="password">
     <button onclick="login_user()">LOGIN</button>
+
     <script>
+        
 
+        let user_name=["email1","email2","email3","email4","email5","email6","email7","email8","email9","email10"]
+        let user_pass=["pass1","pass2","pass3","pass4","pass5","pass6","pass7","pass8","pass9","pass10"]
 
+        const login_user=()=>{
+            let user_input_email=document.getElementById('email').value
+           // let found=false;
+        //     user_name.map((e)=>{
+        //         if(e===user_input_email){
+        //             alert('value match')
+        //             found=true;
+        //         }
+        //         if(!found){
+        //             alert("not found")
+        //         }
+        //     })
+        // }
+            console.log(user_input_email);
+            let ind=user_name.findIndex(e=>e===user_input_email)
+            console.log(user_pass[ind]);
+            if(user_input_email==user_name[ind] && user_input_email==user_pass[ind]){
+                console.log("login")
+            }}
 
-    let user_email=['emai1','emai2','email3','email4','email5']; //array of useer-emil
-    let user_pwd=['pass1','pass2','pass3','pass4','pass5']; //array of user-pwd
-    const login_user=() => {
-       
-        let user_input_email=document.getElementById('email').value;
-         let user_input_pwd=document.getElementById('pwd').value;
-        //let found=false
-       /* user_email.map((e)=>{ //e is parameter
-            if(e===user_input_email){
-                alert('value match');
-                found=true
-            }
-            if(!found){
-                alert('not match');
-            }
-        });*/
-//console.log(user_input_email);
-let ind=user_email.findIndex(e=>e===user_input_email)
-if(user_input_email===user_email[ind] && let user_pwd.findIndex(e=>e===user_input_email)
-console.log(user_pwd[ind]);
-if   
     </script>
     
 
