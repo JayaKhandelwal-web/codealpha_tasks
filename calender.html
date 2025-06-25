@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Calculator</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .calculator {
+      background: #222;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      width: 320px;
+    }
+
+    .display {
+      background: #111;
+      color: #0f0;
+      font-size: 1.6rem;
+      padding: 15px;
+      border-radius: 8px;
+      min-height: 60px;
+      margin-bottom: 15px;
+      word-wrap: break-word;
+      text-align: right;
+    }
+
+    .result {
+      color: #ccc;
+      font-size: 1.1rem;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    button {
+      padding: 20px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      background: #444;
+      color: white;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background: #666;
+    }
+
+    .operator {
+      background: #f57c00;
+    }
+
+    .operator:hover {
+      background: #fb8c00;
+    }
+
+    .equals {
+      background: #00c853;
+      grid-column: span 2;
+    }
+
+    .equals:hover {
+      background: #00e676;
+    }
+
+    .clear, .delete {
+      background: #e53935;
+    }
+
+    .clear:hover, .delete:hover {
+      background: #ef5350;
+    }
+
+    @media (max-width: 400px) {
+      .calculator {
+        width: 95%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <div class="display" id="display">
+      <div id="input"></div>
+      <div class="result" id="result"></div>
+    </div>
+    <div class="buttons">
+      <button class="clear" onclick="clearScreen()">AC</button>
+      <button class="delete" onclick="deleteChar()">DEL</button>
+      <button onclick="append('%')">%</button>
+      <button class="operator" onclick="append('/')">/</button>
+
+      <button onclick="append('7')">7</button>
+      <button onclick="append('8')">8</button>
+      <button onclick="append('9')">9</button>
+      <button class="operator" onclick="append('*')">*</button>
+
+      <button onclick="append('4')">4</button>
+      <button onclick="append('5')">5</button>
+      <button onclick="append('6')">6</button>
+      <button class="operator" onclick="append('-')">-</button>
+
+      <button onclick="append('1')">1</button>
+      <button onclick="append('2')">2</button>
+      <button onclick="append('3')">3</button>
+      <button class="operator" onclick="append('+')">+</button>
+
+      <button onclick="append('0')">0</button>
+      <button onclick="append('.')">.</button>
+      <button class="equals" onclick="calculate()">=</button>
+    </div>
+  </div>
+
+  <script>
+    const inputEl = document.getElementById('input');
+    const resultEl = document.getElementById('result');
+
+    function append(value) {
+      inputEl.textContent += value;
+      updateResult();
+    }
+
+    function clearScreen() {
+      inputEl.textContent = '';
+      resultEl.textContent = '';
+    }
+
+    function deleteChar() {
+      inputEl.textContent = inputEl.textContent.slice(0, -1);
+      updateResult();
+    }
+
+    function calculate() {
+      try {
+        const res = eval(inputEl.textContent);
+        resultEl.textContent = "= " + res;
+        inputEl.textContent = res;
+      } catch {
+        resultEl.textContent = "Error";
+      }
+    }
+
+    function updateResult() {
+      try {
+        const expr = inputEl.textContent;
+        if (expr.trim() === '') {
+          resultEl.textContent = '';
+          return;
+        }
+        const res = eval(expr);
+        resultEl.textContent = "= " + res;
+      } catch {
+        resultEl.textContent = '';
+      }
+    }
+
+    // Keyboard support
+    document.addEventListener('keydown', (e) => {
+      const key = e.key;
+
+      if (/\d|\+|\-|\*|\/|%|\./.test(key)) {
+        append(key);
+      } else if (key === 'Enter') {
+        calculate();
+      } else if (key === 'Backspace') {
+        deleteChar();
+      } else if (key === 'Escape') {
+        clearScreen();
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>yu are registered</h1>
+    <div id="data1"></div>
+    <button>Logout</button>
+    <button>Update</button>
+    <script>
+        let isLogin=JSON.parse(localStorage.getItem("isLogin"));
+        let data1=document.getElementById("data1")
+        data1.innerHTML=`
+        <h1>${isLogin.name}</h1>
+        <h1>${isLogin.email}</h1>
+        <h1>${isLogin.mobile}</h1>
+        <h1>${isLogin.password}</h1>
+        `
+        
+    </script>
+</body>
+</html>
