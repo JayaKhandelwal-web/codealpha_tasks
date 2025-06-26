@@ -8,10 +8,16 @@
 <body>
     <h1>yu are registered</h1>
     <div id="data1"></div>
-    <button>Logout</button>
-    <button>Update</button>
+    <button onclick=userLogout() class="btn"> Logout</button>
+    <button onclick="window.location.href='/updateuser.html'" class="btn">update</button>
+        
+       
+    
+    
+    
     <script>
         let isLogin=JSON.parse(localStorage.getItem("isLogin"));
+        if(isLogin){
         let data1=document.getElementById("data1")
         data1.innerHTML=`
         <h1>${isLogin.name}</h1>
@@ -19,6 +25,17 @@
         <h1>${isLogin.mobile}</h1>
         <h1>${isLogin.password}</h1>
         `
+    }
+    else{
+        
+        data1.innerHTML="<h1>please login</h1>"
+
+        }    
+    
+        const userLogout=()=>{
+            localStorage.removeItem("isLogin");
+            window.location.href='/userLogin.html';
+        }
         
     </script>
 </body>

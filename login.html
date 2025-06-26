@@ -7,9 +7,10 @@
 </head>
 <body>
     <h1>user login</h1>
-    <form action="">
+    <form action="" id="form">
 Email: <input type="text" id="email"> <br>
 Password: <input type="text" id="password"> <br>
+<input type="submit" value="SIGNUP">
 <input type="submit" value="login">
     </form>
     <div id="Invalid"></div>
@@ -28,11 +29,13 @@ Password: <input type="text" id="password"> <br>
                 localStorage.setItem('isLogin',JSON.stringify(foundUser));
                 window.location.href='/userDashboard.html';
             }
+               else{
+            Invalid.innerHTML='<h1>invalid mail and password</h1>';
+                } 
+
             })
     
-    else{
-        Invalid.innerHTML='<h1>invalid mail and password</h1>';
-    }    
+      
     </script>
 </body>
 </html>
