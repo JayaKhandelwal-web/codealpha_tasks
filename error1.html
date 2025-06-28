@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+    
+    <script>
+        console.log("error handling")
+        try{
+            x=12
+            console.log(x)
+          
+            
+            
+        }
+        catch(error){
+            throw new Error("x is not defined");
+            
+            
+        }
+       
+        finally{
+            console.log("program finsish")
+        }
+
+
+        let p=new Promise((a,r)=>{
+            let car=fetch("https://fakestoreapi.in/api/products");
+            if(car){
+                car.then((e)=>{
+                    a(e.json());
+                })
+            }
+             
+            
+            else{
+                r("reject");
+            }
+        })
+        
+       // console.log(p);
+       p.then((e)=>{
+        let data=e.products;
+        data.map((e1)=>{
+            console.log(e1.id);
+        })
+      
+       })
+    </script>
+</body>
+</html>

@@ -8,12 +8,12 @@
 <body>
     <h1>update yor data</h1>
     <form action="" id="updateuser">
-           Name: <input type="text"  id="name"> <br> <br>
-          Email: <input type="text"  id="email"> <br> <br>
-            Mobile: <input type="text"  id="mobile"> <br> <br>
-              Password: <input type="text"  id="password"> <br> <br>
+           Name: <input type="text"  id="name" placeholder="Enter your name"> <br> <br>
+          Email: <input type="text"  id="email" placeholder="enter your email"> <br> <br>
+            Mobile: <input type="text"  id="mobile" placeholder="enter your mobile"> <br> <br>
+              Password: <input type="text"  id="password" placeholder="enter your password"> <br> <br>
                 
-              <input type="submit" value="UPDATE">
+              <input type="submit" value="UPDATE" id="btn">
     </form>
     <button onclick="print1()">print</button>
     <script>
@@ -26,13 +26,13 @@
         document.getElementById("mobile").value=isLogin.mobile;
         document.getElementById("password").value=isLogin.password;
     
-        document.getElementById('updateuser').addEventListener("submit",(e)=>{
+        document.getElementById("updateuser").addEventListener("submit",(e)=>{
             e.preventDefault();
-            let updatedata{
+            let updatedata={
                 name:document.getElementById("name").value,
-                 Email:document.getElementById("email").value,
-                 mobile :document.getElementById("mobile").value,
-                   name:document.getElementById("password").value,
+                Email:document.getElementById("email").value,
+                mobile :document.getElementById("mobile").value,
+                password:document.getElementById("password").value
             }
             user.map((u)=>{
                 if(isLogin.email===u.email){
@@ -43,6 +43,7 @@
         localStorage.setItem("user",JSON.stringify(user));
         localStorage.setItem("isLogin",JSON.stringify(updatedata));
         window.location.href="/userDashboard.html";
+        
             
             
         })
