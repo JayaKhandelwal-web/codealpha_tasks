@@ -6,51 +6,46 @@
     <title>Document</title>
 </head>
 <body>
-    
-    
-    
-    <script>
-        console.log("error handling")
-        try{
-            x=12
-            console.log(x)
-          
-            
-            
+    <style>
+        #data{
+            display: flex;
+            gap: 3px;
+            flex-wrap: wrap;
         }
-        catch(error){
-            throw new Error("x is not defined");
-            
-            
-        }
-       
-        finally{
-            console.log("program finsish")
-        }
-
-
-        let p=new Promise((a,r)=>{
-            let car=fetch("https://fakestoreapi.in/api/products");
-            if(car){
-                car.then((e)=>{
-                    a(e.json());
-                })
-            }
-             
-            
-            else{
-                r("reject");
-            }
-        })
         
-       // console.log(p);
-       p.then((e)=>{
-        let data=e.products;
-        data.map((e1)=>{
-            console.log(e1.id);
-        })
-      
-       })
-    </script>
+        #card{
+            height: 400px;
+            width: 400px;
+            background-color: black;
+            border: 4px solid white;
+            flex-grow: 2px;     
+        }
+        
+        #card h1,h2,strong{
+            color: wheat;
+            font-size: 18px;
+        }
+
+        #card p{
+            color: wheat;
+            font-size: 10px;
+        }
+
+        #card img{
+            height: 90px;
+            width: 80px;
+
+        }
+        
+    </style>
+
+    <div id="data">
+
+    </div>
+    <h1>error handling with promsies in js</h1>
+
+    <script src="error1.js"></script>
+
+    
 </body>
 </html>

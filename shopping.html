@@ -6,19 +6,30 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>error handling</h1>
+    
+    <h1>error types</h1>
     <script>
+        console.log("error handling");
         try{
-            console.log("line1");
-            Console.log("line2"); // when syntax error->compile time error
-           // console.log(jaya) //run time error
+           // x=12
+            console.log(x)
+          
+            
             
         }
         catch(error){
-            console.log(error);
+            throw new Error("x is  missing");
+            
+            
         }
        
-        
+        finally{
+            console.log("program finsish");
+        }
     </script>
+   
+    
+   
+    
 </body>
 </html>
