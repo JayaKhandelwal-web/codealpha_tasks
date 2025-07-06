@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ludo Dice Roller</title>
+</head>
+<body>
+  <div id="ludo"></div>
+  <button onclick="rollDice()">Roll</button>
+
+  <script>
+    const diceImages = ["dice1.png", "images.jpg", "img1.jpg", "luxury.jpg", "images.jpg", "img1.jpg"];
+
+    function rollDice() {
+      const n = Math.floor(Math.random() * 6);
+      document.getElementById("ludo").innerHTML = `
+        <img src="${diceImages[n]}" alt="Dice ${n + 1}">
+        <h1>${n + 1}</h1>
+      `;
+    }
+  </script>
+</body>
+</html>

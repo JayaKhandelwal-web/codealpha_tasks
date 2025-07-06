@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Color Roll</title>
+</head>
+<body>
+  <div id="ludo" style="font-size: 24px; margin-bottom: 10px;"></div>
+  <button onclick="djlight()">Roll</button>
+
+  <script>
+    let clr = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"];
+
+    const djlight = () => {
+      let x = "#";
+      for (let i = 0; i < 6; i++) {
+        let n = Math.floor(Math.random() * 16); // corrected this line
+        x += clr[n]; // accumulate hex digit
+      }
+      document.body.style.backgroundColor = x;
+      document.getElementById("ludo").innerHTML = x;
+    };
+
+    // Optional auto-roll every 1 second (not 10 ms!)
+    setInterval(() => {
+      djlight();
+    }, 100); // Changed from 10ms to 1000ms = 1s
+  </script>
+</body>
+</html>
