@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="abc.html" onsubmit=" return handlesubmit(event)">
+        name:<input type="text" id="a"> <br>
+        email:<input type="text" id="b"> <br>
+        password:<input type="text" id="p1"> <br>
+        repassword:<input type="text" id="p2"> <br>
+        mobile:<input type="text" id="no"> <br><br>
+        <input type="submit" value="signup">
+
+        
+    </form>
+
+    <div id="data"></div>
+
+    <script>
+        const handlesubmit=(e)=>{
+            name=document.getElementById("a").value;
+            email=document.getElementById("b").value;
+            password=document.getElementById("p1").value;
+            repassword=document.getElementById("p2").value;
+            mobile=document.getElementById("no").value;
+            if(name=="" || email=="" || password=="" || repassword=="" || mobile==""){
+                document.getElementById("data").innerHTML="<h1>FILL ALL BOXES </h1>";
+                e.preventDefault();
+                return false;
+            }
+            else if(password!==repassword)
+            {
+                document.getElementById("data").innerHTML="<h1>password nhi hoga  match</h1>";
+                e.preventDefault();
+                return false;
+            }
+            else if(mobile.length !==10)
+            {
+                document.getElementById("data").innerHTML="<h1>mobile 10 digit me hoga</h1>";
+                e.preventDefault();
+                return false;
+
+            }
+            else if(isNaN(mobile)){
+                document.getElementById("data").innerHTML="<h1>digit me daalo</h1>";
+                e.preventDefault();
+                return false;
+
+            }
+            else{
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>
