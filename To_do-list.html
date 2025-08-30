@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function addTask(){
+            const newTask=document.getElementById('LI')
+            const taskkilist=document.getElementById('tasklist')
+            tasklist.appendChild(newTask)
+            newTask.textContent=document.getElementById('inputAdd').value
+            document.getElementById('inputAdd').value=""
+        
+
+        deleteTask(newTask) //call function
+        }
+        function deleteTask(newTask){
+            const deleteBtn=document.createElement('button')
+            deleteBtn.textContent="DELETE"
+            newTask.appendChild(deleteBtn)
+            deleteBtn.onclick=function(){
+                newTask.remove()
+            }
+        }
+    </script>
+    <div class="container">
+     <div class="header">
+        <h2>To do list</h2>
+     </div>
+     <div class="addTask">
+        <input type="text" placeholder="Add the element" id="inputAdd">
+        <button onclick="addTask()">Add</button>
+     </div>
+     <ul class="tasklist" id="tasklist">
+        <li></li>
+     </ul>
+    </div> 
+</body>
+</html>

@@ -1,3 +1,4 @@
-function color(c1){
-     document.body.style.background=c1
+function color(jaya){
+     
+     document.body.style.background=jaya
 }
