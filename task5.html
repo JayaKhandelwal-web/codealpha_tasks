@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <script>
+    <h1>hello adsfs</h1>
+    <input type="text" placeholder="email" id="email"> <br>
+    <input type="text" placeholder="password" id="password"> <br>
+    <button onclick="login_user()">LOGIN</button>
+    <script>
+    let user_email=['emai1','emai2','email3','email4','email5'];
+    let user_pwd=['pass1','pass2','pass3','pass4','pass5'];
+    const login_user=() => {
+        let user_input_email=document.getElementById('email').value
+        user_email.map((e)=>{
+            if(e===user_input_email){
+                alert('value match');
+            }
+            else{
+                alert('not match');
+            }
+        })
+    </script>
+    
+
+        
+</body>
+</html>

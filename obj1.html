@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let obj1={
+            "key1":"value1",
+            "key2":"value2",
+            "key3":"value3"
+        }
+        let obj2={
+            "key4":"value4",
+            "key5":"value5",
+            "key6":"value6"
+        }
+        let obj3={...obj1,...obj2};
+        console.log(obj3);
+let obj4=Object.assign({},obj1,obj2)
+console.log(obj4);
+
+        
+    </script>
+</body>
+</html>

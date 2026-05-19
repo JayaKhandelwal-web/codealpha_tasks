@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>crud with json server api</h1>
+    <div id="products"></div>
+    <button onclick="getallproduct()">getalldata</button>
+    <form action="">
+        <fieldset>
+            <legend>data post karo</legend>
+            title <input type="text" id="title"> <br>
+            price <input type="text" id="price">
+            <button onclick="addproduct()">ADD PRODUCT</button>
+        </fieldset>
+    </form>
+    <form action="">
+    <fieldset>
+            <legend>data post karo</legend>
+            id <input type="text" id="id"> <br>
+            title <input type="text" id="title"> <br>
+            price <input type="text" id="price">
+            <button onclick="updatedata()">update</button>
+       </fieldset>
+
+       </form>
+
+       <form action="">
+        <fieldset>
+            <legend>data post karo</legend>
+            id <input type="text" id="id">
+            <button onclick="updatedata()">delete</button>
+        </fieldset>
+
+    <script src="projectcrud.js"></script>
+    
+</body>
+</html>
